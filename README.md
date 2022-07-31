@@ -1,12 +1,33 @@
 
-# Gather data from different APIs
+# Real-Time Stock Analysis 
+
+With the surge of crypto-currencies, finance has becoming more and more accessible for a larger public.
+Data are the key and are now accessible. In this project, we present a simple architecture allowing us to gather a large amount of data through different api/services. We allow the possibility to save those data and to use them directly for real-time purpose. 
+
+
+## Getting start
+
+
+Launch all the components
+```bash
+sudo docker-compose up 
+```
+
+
+
+## Architecture
+
+
+
+Currently focus on crypto-currencies, 
+Gather trading data using different apis. 
+We decompose our system by using kafka system.
 
 
 
 
 
-
-
+## Links
 
 Tutorial : 
 
