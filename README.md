@@ -17,6 +17,8 @@ sudo docker-compose up
 
 ## Architecture
 
+https://questdb.io/blog/2022/06/07/data-pipeline-with-kafka-and-questdb/
+
 
 
 Currently focus on crypto-currencies, 
