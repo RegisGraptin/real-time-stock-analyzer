@@ -11,7 +11,16 @@ Data are the key and are now accessible. In this project, we present a simple ar
 Launch all the components
 ```bash
 sudo docker-compose up 
+
+curl -X POST -H "Accept:application/json" -H "Content-Type:application/json" --data @config/connector.json http://localhost:8083/connectors
+
 ```
+
+
+export PYTHONPATH="${PYTHONPATH}:./src/"
+
+
+
 
 
 
