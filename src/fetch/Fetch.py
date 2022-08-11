@@ -4,10 +4,12 @@ import json
 from abc import ABCMeta
 from kafka import KafkaProducer
 
-class Fetch(metaclass=ABCMeta):
+from threading import Thread
+
+class Fetch(Thread, metaclass=ABCMeta):
     
     def __init__(self, host: str, port: str) -> None:
-        
+        Thread.__init__(self)
         # TODO :: Create a fabric pattern for the creation of this producer
         
         # Create a kafka producer
@@ -20,7 +22,10 @@ class Fetch(metaclass=ABCMeta):
     def fetch(self):
         pass
     
-    def send(self):
+    def send(self, data):
+        pass
+    
+    def run(self):
         pass
 
 
