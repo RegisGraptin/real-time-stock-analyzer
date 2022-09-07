@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 from data.KafkaFactory import KafkaFactory
 from fetch.BinanceFetch import BinanceFetch
+from trade.PriceAlert import PriceAlert
 from trade.Analyzer import Analyzer
 
 class Manager:
@@ -27,11 +28,15 @@ class Manager:
         fetcherBTC.start()
         
         
+
+        # print("Run the analyzer...")
         
-        print("Run the analyzer...")
+        # analyzer = Analyzer(self.kafkaFactory.consumer("topic_BTCUSDT"))
+        # analyzer.start()
         
-        analyzer = Analyzer(self.kafkaFactory.consumer("topic_BTCUSDT"))
-        analyzer.start()
+        print("Price alert on BTC...")
+        priceAlert = PriceAlert(self.kafkaFactory.consumer("topic_BTCUSDT"))
+        priceAlert.start()
         
         
 

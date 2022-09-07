@@ -5,13 +5,26 @@ from data.DataStructure import DataStructure
 
 class TradeDataStructure(DataStructure):
 
-    LABELS = ['Open', 'Close', 'High', 'Low', 'Volume']
+    LABELS = ['open', 'close', 'high', 'low', 'volume']
 
     def __init__(self, df: pd.DataFrame) -> None:
         super().__init__(df)
 
     def get_data(self):
         return self.df[self.LABELS]
+
+    def create_json(json: dict):
+        
+        if json.get("payload"):
+            
+            data = json.get("payload")
+            
+            dataframe = pd.DataFrame.from_dict([data])
+            
+            return TradeDataStructure(dataframe)
+
+        # Correct this
+        return None
 
     def to_json(self):
         

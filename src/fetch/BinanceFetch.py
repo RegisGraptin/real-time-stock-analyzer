@@ -41,6 +41,14 @@ class BinanceFetch(Fetch):
         numeric_columns = ["Open", "High", "Low", "Close", "Volume"]
         df_data[numeric_columns] = df_data[numeric_columns].apply(pd.to_numeric, axis = 1)
 
+        df_data.rename(columns={
+            "Open"  : "open", 
+            "High"  : "high",
+            "Low"   : "low",
+            "Close" : "close",
+            "Volume": "volume"
+        })
+        
         df_data = df_data.set_index(df_data["Open time"])
         
         # Reduce the timestamps in second instead of ms
