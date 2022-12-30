@@ -16,8 +16,15 @@ curl -X POST -H "Accept:application/json" -H "Content-Type:application/json" --d
 
 ```
 
+## Fetch the data from binance each minute
 
+```bash 
 export PYTHONPATH="${PYTHONPATH}:./src/"
+python3 ./src/manager.py
+```
+
+
+
 
 
 

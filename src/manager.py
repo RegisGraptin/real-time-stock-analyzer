@@ -4,9 +4,9 @@ import os
 from dotenv import load_dotenv
 
 from data.KafkaFactory import KafkaFactory
-from fetch.BinanceFetch import BinanceFetch
+from fetch.APIFetcher import APIFetcher
 from trade.PriceAlert import PriceAlert
-from trade.Analyzer import Analyzer
+from api.BinanceAPI import BinanceAPI
 
 class Manager:
     
@@ -20,7 +20,8 @@ class Manager:
         
         # TODO :: Have a config file and loop for each requiere configuration 
         
-        fetcherBTC = BinanceFetch(host=self.host, port=self.port, pair="BTCUSDT")
+        binanceAPI = BinanceAPI()
+        fetcherBTC = APIFetcher(binanceAPI, "BTCUSDT")
         
         print("Run the data thread...")
         

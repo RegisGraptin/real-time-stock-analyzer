@@ -53,3 +53,7 @@ class TradeDataStructure(DataStructure):
         }
         
         return data
+
+
+    def __str__(self) -> str:
+        return self.df.to_string()
